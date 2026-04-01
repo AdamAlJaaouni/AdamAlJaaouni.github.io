@@ -45,7 +45,11 @@ function App() {
               <article className="project" key={project.title}>
                 <img
                   className="project-image"
-                  src={project.imageUrl}
+                  src={
+                    project.imageUrl.startsWith("http")
+                      ? project.imageUrl
+                      : `${import.meta.env.BASE_URL}${project.imageUrl}`
+                  }
                   alt={project.imageAlt || `${project.title} screenshot`}
                   loading="lazy"
                 />
