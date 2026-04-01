@@ -19,26 +19,27 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Project One",
+    title: "FRC 2025 Robot - Atlantis",
     description:
       "A modern web app focused on speed, accessibility, and clean UI.",
-    stack: ["React", "Vite", "CSS"],
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/your-user/project-one"
+    stack: ["Java", "WPIlib"],
+    liveUrl: "https://www.youtube.com/watch?v=tsVk5y5ZRRk",
+    repoUrl: "https://github.com/Oakbotics/2025-FRC-Code"
   },
   {
-    title: "Project Two",
+    title: "YOLO",
     description:
-      "A full-stack project with API integrations and reusable components.",
-    stack: ["React", "Node.js", "REST API"],
+      "Trained a custom YOLOv11s ping pong ball detector with GPU acceleration in Google Colab, then built a Python inference pipeline for real-time detection. Evaluated performance with mAP and precision, reaching ~75% validation accuracy.",
+    stack: ["Python", "YOLOv11s", "Google Colab", "Computer Vision"],
     liveUrl: "https://example.com",
-    repoUrl: "https://github.com/your-user/project-two"
+    repoUrl: "https://github.com/AdamAlJaaouni"
   },
   {
-    title: "Project Three",
-    description: "A responsive portfolio or business website with SEO basics.",
-    stack: ["React", "JavaScript", "CSS"],
+    title: "News Aggregator",
+    description:
+      "Built a full-stack React + Node.js/Express app with real-time NewsAPI integration, category and keyword filtering, and secure environment-variable handling. Containerized the app with Docker and deployed it on AWS ECS.",
+    stack: ["React", "Node.js", "Express", "NewsAPI", "Docker", "AWS ECS"],
     liveUrl: "https://example.com",
-    repoUrl: "https://github.com/your-user/project-three"
+    repoUrl: "https://github.com/AdamAlJaaouni"
   }
 ];
