@@ -98,6 +98,15 @@ main {
   background: #020617;
 }
 
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+  margin-bottom: 0.75rem;
+}
+
 .project h3 {
   margin: 0;
 }

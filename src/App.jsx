@@ -43,6 +43,12 @@ function App() {
           <div className="projects">
             {projects.map((project) => (
               <article className="project" key={project.title}>
+                <img
+                  className="project-image"
+                  src={project.imageUrl}
+                  alt={project.imageAlt || `${project.title} screenshot`}
+                  loading="lazy"
+                />
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <p className="stack">{project.stack.join(" | ")}</p>
