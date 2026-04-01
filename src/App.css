@@ -1,0 +1,121 @@
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.hero {
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #7dd3fc;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.role {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.tagline {
+  color: #e2e8f0;
+  max-width: 620px;
+  margin: 0.8rem auto 0;
+}
+
+.hero-actions {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+a {
+  color: #0f172a;
+  background: #7dd3fc;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.92;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #1e293b;
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+
+.card h2 {
+  margin: 0 0 0.8rem;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills li {
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  color: #bfdbfe;
+}
+
+.projects {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.project {
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 0.95rem;
+  background: #020617;
+}
+
+.project h3 {
+  margin: 0;
+}
+
+.stack {
+  color: #94a3b8;
+  font-size: 0.92rem;
+}
+
+.links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #94a3b8;
+}

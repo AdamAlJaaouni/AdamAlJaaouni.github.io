@@ -1,148 +1,16 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Adam's Resume Site</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio website for Adam Al Jaaouni"
+    />
+    <title>Adam Al Jaaouni | Portfolio</title>
   </head>
-  <body class="is-preload">
+  <body>
     <div id="root"></div>
-
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <script type="text/babel">
-      function App() {
-        return (
-          <>
-            <section id="sidebar">
-              <div className="inner">
-                <nav>
-                  <ul>
-                    <li><a href="#intro">Welcome</a></li>
-                    <li><a href="#one">Who I Am</a></li>
-                    <li><a href="#two">What I've Done</a></li>
-                    <li><a href="#three">Get in touch</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </section>
-
-            <div id="wrapper">
-              <section id="intro" className="wrapper style1 fullscreen fade-up">
-                <div className="inner">
-                  <h1>Adam Al Jaaouni</h1>
-                  <p>This is my personal resume website, Thanks for visiting!</p>
-                  <ul className="actions">
-                    <li><a href="#two" className="button scrolly">Actual Resume Experiences</a></li>
-                  </ul>
-                </div>
-              </section>
-
-              <section id="one" className="wrapper style2 spotlights">
-                <section>
-                  <a href="#" className="image">
-                    <img src="images/pic01.jpeg" alt="" data-position="center center" />
-                  </a>
-                  <div className="content">
-                    <div className="inner">
-                      <h2>Who I Am</h2>
-                      <p>
-                        I'm Adam Al Jaaouni, A University of Waterloo student studying Mathematics and
-                        persuing a carrer in software development
-                      </p>
-                      <ul className="actions">
-                        <li><a href="generic.html" className="button">Learn more</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-              </section>
-
-              <section id="two" className="wrapper style1 fullscreen fade-up">
-                <div className="inner">
-                  <h1>Skills</h1>
-                  <p>
-                    - Coding Languages: Java (Proficient), Python, C++, Racket<br />
-                    - Tools: Proficient Managing and Contributing using Git, Microsoft Office Suite, <br />
-                  </p>
-                  <h1>Experiences</h1>
-                  <p>
-                    <b>FRC Robotics Team Captain (Team 3739) | September 2022 - May 2025 </b> <br />
-                    - Team Captain, Programming Captain, Robot Driver, and Drive Coach.<br />
-                    - Increased Programming Team size by 6x (from 2 to 12 students contributing and learning)<br />
-                    - As Programming Captain, we coded large complex subsystems including: multijointed arms, elevators, and flywheel shooters. This included pneumatic systems, PID motor control, and simple voltage/PWM motor/servo control.<br />
-                    - Used Apriltag computer vision and Neural Network image target detection to triangulate robot/target position continually while automatically driving towards target.<br />
-                    - Coded automated parallel robotic driving and manipulation sequences using both vision and odometry/encoder based targeting systems (driving within +/- 2cm accuracy).<br />
-                    - Lead team to provincial championships division finalists 3 consecutive years, acting as driver/drive coach at 2 championships. Competed at the World Championships in 2025.<br />
-                    - Personally nominated and achieved Deans List Semi Finalist in 2024<br />
-                    - Taught and mentored dozens of Underclassmen Java and OOP and Robotics Concepts.<br />
-                    <b>DECA Founder &amp; VP of Career Development | September 2024 - February 2025 </b> <br />
-                    - Founded, Organized, Fundraised and Advertised DECA to School population, with first year having over 40 students, 15 of which including myself qualified and competed at provincial championships<br />
-                  </p>
-                  <h1>Projects</h1>
-                  <p>
-                    <b>Java-Based Snake Game</b><br />
-                    - Used Java Swift and game tick counters to make custom multi gamemode Snake game for High School Computer Science Class<br />
-                    <b>Personal Resume Website</b><br />
-                    - Built with <b>HTML, CSS (SASS)</b>, and <b>JavaScript</b>, it features modern front-end techniques and clean code. <br />
-                    - Hosted on GitHub Pages, This personal website serves as an online portfolio for projects and professional information.<br />
-                    <b>Full Stack News Aggregator Web App</b><br />
-                    - Built a full-stack, responsive news aggregator using <b>React</b> and <b>Node.js/Express</b>, integrating real-time data from <b>NewsAPI</b>.<br />
-                    - Implemented category-based browsing and keyword search with optimized <b>API handling</b>, CORS configuration, and environment-based security.<br />
-                    - Delivered a modern, mobile-friendly UI with fast load times, and clean architecture.
-                  </p>
-                </div>
-              </section>
-
-              <section id="three" className="wrapper style1 fade-up">
-                <div className="inner">
-                  <h2>Get in touch</h2>
-                  <p>The best way to reach me is by email but feel free to call or text me too</p>
-                  <div className="split style1">
-                    <section>
-                      <ul className="contact">
-                        <li>
-                          <h3>Address</h3>
-                          <span>London, ON<br /></span>
-                        </li>
-                        <li>
-                          <h3>Email</h3>
-                          <a href="#">aaljaaouni@gmail.com</a>
-                        </li>
-                        <li>
-                          <h3>Phone</h3>
-                          <span>(226) 998-7140</span>
-                        </li>
-                        <li>
-                          <h3>Social</h3>
-                          <ul className="icons">
-                            <li>
-                              <a href="https://github.com/AdamAlJaaouni" className="icon brands fa-github">
-                                <span className="label">GitHub</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="https://www.linkedin.com/in/adamaljaaouni" className="icon brands fa-linkedin-in">
-                                <span className="label">LinkedIn</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </section>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </>
-        );
-      }
-
-      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-    </script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
