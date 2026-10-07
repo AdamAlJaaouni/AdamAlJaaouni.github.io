@@ -9,8 +9,7 @@
 export const links = {
   phone: "tel:+12269987140",
   email: "mailto:aaljaaouni@gmail.com",
-  github: "https://github.com/AdamAlJaaouni",
-  linkedin: "https://www.linkedin.com/in/adamaljaaouni/",
+  uwEmail: "mailto:aaljaaou@uwaterloo.ca",
   // Relative to the site root; resolved with import.meta.env.BASE_URL.
   resumePdf: "Adam-Al-Jaaouni-Resume.pdf"
 };
@@ -19,17 +18,12 @@ export const links = {
 // Strings stay in natural case: Cormorant SC draws lowercase as small caps.
 export const card = {
   phone: "226\u00a0998\u00a07140",
-  firm: "UWaterloo CS",
-  firmSubtitle: "Computer Vision Engineer",
+  uwEmail: "aaljaaou@uwaterloo.ca", // top right, where the film has the firm
   firstName: "Adam",
   lastName: "Al\u00a0Jaaouni",
   title: "Computer Science Student",
   city: "Waterloo, Ont.",
-  contacts: [
-    { label: "email", text: "aaljaaouni@gmail.com", href: links.email },
-    { label: "github", text: "adamaljaaouni", href: links.github },
-    { label: "linkedin", text: "adamaljaaouni", href: links.linkedin }
-  ]
+  contact: { label: "email", text: "aaljaaouni@gmail.com", href: links.email }
 };
 
 // Back of the card: experience only. Projects, skills and education live in

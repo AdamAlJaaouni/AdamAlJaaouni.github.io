@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { card, links } from "../data";
 
 export default function CardFront({ headingRef }) {
@@ -8,10 +7,9 @@ export default function CardFront({ headingRef }) {
         <a className="front-phone" href={links.phone}>
           {card.phone}
         </a>
-        <p className="front-firm">
-          <span className="front-firm-name">{card.firm}</span>
-          <span className="front-firm-sub">{card.firmSubtitle}</span>
-        </p>
+        <a className="front-email" href={links.uwEmail}>
+          {card.uwEmail}
+        </a>
       </div>
 
       <div className="front-name">
@@ -24,16 +22,9 @@ export default function CardFront({ headingRef }) {
 
       <address className="front-foot">
         <span>{card.city}</span>{" "}
-        {card.contacts.map(({ label, text, href }) => (
-          <Fragment key={label}>
-            <a
-              href={href}
-              {...(href.startsWith("http") && { target: "_blank", rel: "noopener" })}
-            >
-              {label} {text}
-            </a>{" "}
-          </Fragment>
-        ))}
+        <a href={card.contact.href}>
+          {card.contact.label} {card.contact.text}
+        </a>
       </address>
     </>
   );
