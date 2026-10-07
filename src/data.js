@@ -8,7 +8,6 @@
 
 export const links = {
   phone: "tel:+12269987140",
-  email: "mailto:aaljaaouni@gmail.com",
   uwEmail: "mailto:aaljaaou@uwaterloo.ca",
   // Relative to the site root; resolved with import.meta.env.BASE_URL.
   resumePdf: "Adam-Al-Jaaouni-Resume.pdf"
@@ -22,8 +21,7 @@ export const card = {
   firstName: "Adam",
   lastName: "Al\u00a0Jaaouni",
   title: "Computer Science Student",
-  city: "Waterloo, Ont.",
-  contact: { label: "email", text: "aaljaaouni@gmail.com", href: links.email }
+  city: "Waterloo, Ont."
 };
 
 // Back of the card: experience only. Projects, skills and education live in

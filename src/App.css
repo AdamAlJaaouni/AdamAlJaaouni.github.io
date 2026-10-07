@@ -159,8 +159,8 @@
 
 /* ------------------------------------------------------------------ front
  * Proportions measured off Bateman's card: the name is no bigger than what
- * sits in the firm's spot (here, the UWaterloo email), and the bottom line
- * spans margin to margin, echoing the top row.
+ * sits in the firm's spot (here, the UWaterloo email); the city sits in the
+ * bottom-left corner, under the phone.
  */
 
 .face--front {
@@ -223,17 +223,12 @@
 
 .front-foot {
   grid-row: 5;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: calc(8 * var(--pt));
   font-style: normal;
   font-size: calc(7 * var(--pt));
   white-space: nowrap;
 }
 
 /* Bigger hit area for the small contact links without moving the layout. */
-.front-foot a,
 .front-phone,
 .front-email {
   padding-block: 0.35em;
@@ -410,12 +405,6 @@
 
   .front-email {
     align-self: flex-end;
-  }
-
-  .front-foot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: calc(2.6 * var(--pt));
   }
 
   .face--back {
