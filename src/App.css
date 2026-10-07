@@ -95,12 +95,10 @@
   transition: visibility 0s;
 }
 
-.face--front {
-  transform: translateZ(1px);
-}
-
+/* No translateZ offset: under perspective it rescales the faces by a hair,
+   and the resampling visibly softens the small type at rest. */
 .face--back {
-  transform: rotateY(180deg) translateZ(1px);
+  transform: rotateY(180deg);
 }
 
 /* The face turning away hides once it passes edge-on. */

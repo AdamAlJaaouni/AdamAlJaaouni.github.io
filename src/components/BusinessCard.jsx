@@ -8,7 +8,21 @@ const resumeHref = `${import.meta.env.BASE_URL}${links.resumePdf}`;
 // px of pointer travel (down to up) before a click stops counting as a tap.
 // Fingers wobble more than mice.
 const DRAG_TOLERANCE = { mouse: 6, touch: 12, pen: 8 };
-const DOUBLE_CLICK_WAIT = 250; // ms; lets a double-click select a word on the back
+// Longest common OS double-click time (Windows and macOS 500ms, GTK 400ms).
+const DOUBLE_CLICK_WAIT = 500;
+
+// True when (x, y) is over actual glyphs rather than bare card stock.
+function isOverText(x, y) {
+  const node = document.caretPositionFromPoint
+    ? document.caretPositionFromPoint(x, y)?.offsetNode
+    : document.caretRangeFromPoint?.(x, y)?.startContainer;
+  if (node?.nodeType !== Node.TEXT_NODE) return false;
+  const range = document.createRange();
+  range.selectNodeContents(node);
+  return [...range.getClientRects()].some(
+    (r) => x >= r.left && x <= r.right && y >= r.top && y <= r.bottom
+  );
+}
 
 export default function BusinessCard() {
   const [flipped, setFlipped] = useState(false);
@@ -22,6 +36,7 @@ export default function BusinessCard() {
   const focusAfterFlip = useRef(false);
   const pointerStart = useRef(null);
   const dragged = useRef(false);
+  const pointerType = useRef("mouse");
   const pendingFlipBack = useRef(0);
 
   useTilt(stageRef, tiltRef, !flipped);
@@ -50,6 +65,7 @@ export default function BusinessCard() {
   };
 
   const onPointerUp = (e) => {
+    pointerType.current = e.pointerType;
     const start = pointerStart.current;
     const tolerance = DRAG_TOLERANCE[e.pointerType] ?? DRAG_TOLERANCE.mouse;
     dragged.current = !!start && Math.hypot(e.clientX - start.x, e.clientY - start.y) > tolerance;
@@ -63,11 +79,13 @@ export default function BusinessCard() {
     if (window.getSelection()?.toString().trim()) return;
     if (dragged.current) return;
     if (e.detail > 1) return; // second click of a double-click: selecting, not flipping
-    if (flipped) {
-      // People read and copy from the back, so give a double-click time to land.
+    if (flipped && pointerType.current === "mouse" && isOverText(e.clientX, e.clientY)) {
+      // People read and copy from the back: over text, wait out the
+      // double-click window so a double-click selects a word instead of
+      // turning the card. Bare stock and taps turn it at once.
       pendingFlipBack.current = setTimeout(() => setFlipped(false), DOUBLE_CLICK_WAIT);
     } else {
-      setFlipped(true);
+      setFlipped((f) => !f);
     }
   };
 
