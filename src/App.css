@@ -158,14 +158,14 @@
 }
 
 /* ------------------------------------------------------------------ front
- * Proportions measured off Bateman's card: the name is no bigger than the
- * firm, the subtitle is set to the firm's exact width, and the contact line
- * runs margin to margin.
+ * Proportions measured off Bateman's card: the name is no bigger than what
+ * sits in the firm's spot (here, the UWaterloo email), and the bottom line
+ * spans margin to margin, echoing the top row.
  */
 
 .face--front {
   display: grid;
-  grid-template-rows: auto 17.5fr auto 31fr auto;
+  grid-template-rows: auto 20.5fr auto 28.5fr auto;
   padding: calc(20 * var(--pt)) calc(12 * var(--pt)) calc(7.6 * var(--pt));
   font-family: var(--font-card);
   font-weight: 600;
@@ -192,25 +192,11 @@
   white-space: nowrap;
 }
 
-/* Grid sized by the firm name alone; the subtitle stretches to that width. */
-.front-firm {
-  display: grid;
-  row-gap: calc(1.6 * var(--pt));
-}
-
-.front-firm-name {
-  font-size: calc(10.2 * var(--pt));
+/* Sized to sit in the firm's corner without outweighing the name. */
+.front-email {
+  font-size: calc(7 * var(--pt));
+  letter-spacing: 0.03em;
   white-space: nowrap;
-}
-
-.front-firm-sub {
-  width: 0;
-  min-width: 100%;
-  font-size: calc(5.1 * var(--pt));
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  text-align: justify;
-  text-align-last: justify;
 }
 
 .front-name {
@@ -237,16 +223,19 @@
 
 .front-foot {
   grid-row: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: calc(8 * var(--pt));
   font-style: normal;
-  font-size: calc(5.2 * var(--pt));
+  font-size: calc(7 * var(--pt));
   white-space: nowrap;
-  text-align: justify;
-  text-align-last: justify;
 }
 
 /* Bigger hit area for the small contact links without moving the layout. */
 .front-foot a,
-.front-phone {
+.front-phone,
+.front-email {
   padding-block: 0.35em;
   margin-block: -0.35em;
 }
@@ -419,16 +408,14 @@
     align-self: flex-start;
   }
 
-  .front-firm {
+  .front-email {
     align-self: flex-end;
   }
 
   .front-foot {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: calc(2.6 * var(--pt));
-    font-size: calc(6.6 * var(--pt));
   }
 
   .face--back {
