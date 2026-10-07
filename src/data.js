@@ -3,7 +3,7 @@
 //
 // Text conventions:
 //   **bold**  renders as <strong> (use sparingly: metrics a skim should catch)
-//        non-breaking space, keeps tokens like "~12 FPS" on one line
+//   \u00a0    non-breaking space, keeps tokens like "~12 FPS" on one line
 //   tier: 2   bullet is dropped on narrow (phone-sized) cards
 
 export const links = {
@@ -18,11 +18,11 @@ export const links = {
 // Front of the card, laid out like Patrick Bateman's Pierce & Pierce card.
 // Strings stay in natural case: Cormorant SC draws lowercase as small caps.
 export const card = {
-  phone: "226 998 7140",
+  phone: "226\u00a0998\u00a07140",
   firm: "UWaterloo CS",
   firmSubtitle: "Computer Vision Engineer",
   firstName: "Adam",
-  lastName: "Al Jaaouni",
+  lastName: "Al\u00a0Jaaouni",
   title: "Computer Science Student",
   city: "Waterloo, Ont.",
   contacts: [
@@ -32,6 +32,8 @@ export const card = {
   ]
 };
 
+// Back of the card: experience only. Projects, skills and education live in
+// the PDF.
 export const experience = [
   {
     role: "Computer Vision Engineer Intern",
@@ -40,22 +42,28 @@ export const experience = [
     end: { label: "Present" },
     bullets: [
       {
-        text: "Built a basketball CV pipeline end to end: **YOLOv8** fine-tuned in PyTorch, run live on-device via Core ML/Vision at **~12 FPS**."
+        text: "Built a React Native + native Swift iOS app for live sports broadcasting across **17\u00a0sports**, with real-time overlays, multi-destination streaming and on-device auto-scoring."
       },
       {
-        text: "Trained a 5-class YOLOv8 detector via transfer learning to **93% mAP50** (0.86 precision / 0.90 recall)."
+        text: "Built an end-to-end basketball computer vision pipeline, taking a fine-tuned **YOLOv8** detector from PyTorch training through Core\u00a0ML/Vision deployment for live on-device inference at **~12\u00a0FPS**."
       },
       {
-        text: "Built a React Native + Swift iOS app for live broadcasting across **17 sports** with on-device auto-scoring."
+        text: "Trained a 5-class YOLOv8 detector via transfer learning, achieving **93%\u00a0mAP50** (0.86 precision / 0.90 recall), then optimized inference with a cropped second pass to recover distant ball detections."
       },
       {
-        text: "Raised 1v1 player separability from **0.41 to 0.85** with a lightweight YCbCr shirt-color descriptor instead of a re-ID model.",
+        text: "Designed a multi-frame state machine to distinguish rim bounce-outs from net-occluded makes, replacing a brittle single-frame make-detection heuristic."
+      },
+      {
+        text: "Improved 1v1 player separability from **0.41\u00a0to\u00a00.85** using a lightweight YCbCr shirt-color descriptor, avoiding the need for a deep re-identification model."
+      },
+      {
+        text: "Maintained feature parity across Swift, TypeScript and Python implementations, validated with a Python/OpenCV integration harness and **250+ Jest unit tests**.",
         tier: 2
       }
     ]
   },
   {
-    role: "Team & Software Captain",
+    role: "Team & Software Captain, Robot Driver/Coach",
     org: "FRC Robotics Team 3739",
     orgHref: "https://github.com/Oakbotics/2025-FRC-Code",
     orgTitle: "2025 robot code on GitHub",
@@ -63,46 +71,17 @@ export const experience = [
     end: { label: "Apr. 2025", dateTime: "2025-04" },
     bullets: [
       {
-        text: "Built AprilTag CV and neural-net target detection for autonomous navigation: **±2 cm** accuracy via PID control fused with vision/encoder odometry."
+        text: "Engineered multi-DOF robotic arms, elevators and flywheel shooters via PID motor, pneumatic and PWM/servo control."
       },
       {
-        text: "Led team to provincial division finalist (**3×**) and the **2025 World Championships**; grew programming team from 2 to 12."
+        text: "Built AprilTag CV and neural network target detection for autonomous navigation, achieving **±2\u00a0cm** accuracy via PID control fused with vision/encoder odometry."
       },
       {
-        text: "Dean’s List Semi-Finalist; taught Java, OOP and Git.",
-        tier: 2
+        text: "Led team to provincial division finalist (**3×**) and the **2025 World Championships**; grew the programming team from 2 to 12 members."
+      },
+      {
+        text: "Dean’s List Semi-Finalist; taught Java, OOP and Git fundamentals."
       }
     ]
   }
 ];
-
-export const projects = [
-  {
-    title: "Ping Pong Ball Detection",
-    date: { label: "Jan. 2026", dateTime: "2026-01" },
-    summary:
-      "Custom **YOLOv11s** detector trained on Colab GPUs from curated, labeled data; evaluated with mAP@0.5, mAP@0.5:0.95, precision and recall; real-time Python inference."
-  },
-  {
-    title: "Full-Stack News Aggregator",
-    href: "https://github.com/AdamAlJaaouni/News-Aggregator",
-    date: { label: "Jan. 2026", dateTime: "2026-01" },
-    summary:
-      "React + Node.js/Express app with real-time NewsAPI data and category/keyword search; containerized with Docker, deployed on AWS ECS."
-  }
-];
-
-export const skills = [
-  { label: "ML/CV", items: "YOLOv8/v11, Core ML, OpenCV, Vision, Ultralytics" },
-  { label: "Languages", items: "Java, Python, C, C++, Swift, TypeScript, SQL, Racket" },
-  { label: "Frameworks", items: "PyTorch, React, React Native, Node.js/Express, SwiftUI/UIKit" },
-  { label: "Tools", items: "Git/GitHub, Docker, PostgreSQL, Claude Code" }
-];
-
-export const education = {
-  school: "University of Waterloo",
-  degree: "Bachelor of Computer Science (Co-op)",
-  detail: "AI & SWE specialization",
-  start: { label: "Sept. 2025", dateTime: "2025-09" },
-  end: { label: "Apr. 2030", dateTime: "2030-04" }
-};
