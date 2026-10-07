@@ -20,12 +20,7 @@ export default function CardFront({ headingRef }) {
         <p className="front-title">{card.title}</p>
       </div>
 
-      <address className="front-foot">
-        <span>{card.city}</span>{" "}
-        <a href={card.contact.href}>
-          {card.contact.label} {card.contact.text}
-        </a>
-      </address>
+      <address className="front-foot">{card.city}</address>
     </>
   );
 }
