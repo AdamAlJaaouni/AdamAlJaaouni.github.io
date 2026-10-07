@@ -43,6 +43,8 @@ export default function BusinessCard() {
   // Measured between pointerdown and pointerup, not against the click event:
   // browsers nudge a tap's click point toward nearby targets.
   const onPointerDown = (e) => {
+    // A second press means a double-click (or double-click-drag) is under way.
+    clearTimeout(pendingFlipBack.current);
     pointerStart.current = { x: e.clientX, y: e.clientY };
     dragged.current = false;
   };

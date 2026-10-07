@@ -8,6 +8,13 @@
   padding: 48px 16px;
 }
 
+/* Landscape phones: the card needs every pixel of height. */
+@media (max-height: 500px) {
+  .scene {
+    padding-block: 8px;
+  }
+}
+
 .card-scene {
   display: flex;
   flex-direction: column;
@@ -381,11 +388,12 @@
 }
 
 /* ---------------------------------------------------- portrait (phones)
- * Below this width the landscape back can't hold the résumé legibly, so the
- * card stands up: 2 x 3.5in, type keeps its point sizes.
+ * On portrait phones (and anything too narrow for the landscape back to stay
+ * legible) the card stands up: 2 x 3.5in, type keeps its point sizes.
+ * Landscape phones keep the landscape card so the name stays above the fold.
  */
 
-@media (max-width: 671px) {
+@media (max-width: 671px) and (orientation: portrait), (max-width: 639px) {
   .stage {
     width: min(100vw - 32px, 420px);
   }
@@ -432,7 +440,9 @@
   }
 }
 
-@container card (max-width: 379px) {
+/* Narrow cards (small portrait phones, landscape phones under 672px) drop
+   their tier-2 bullets so the back still fits. */
+@container card (max-width: 379px) or ((min-width: 560px) and (max-width: 639px)) {
   [data-tier="2"] {
     display: none;
   }
@@ -455,13 +465,19 @@
     transform: none;
   }
 
+  /* Fade the incoming face in on top of the outgoing one, which stays opaque
+     until the fade ends, so the table never shows through mid-turn. */
   .face {
     transition: opacity 0.2s linear, visibility 0s;
   }
 
+  .face:not([inert]) {
+    z-index: 1;
+  }
+
   .face[inert] {
     opacity: 0;
-    transition: opacity 0.2s linear, visibility 0s linear 0.2s;
+    transition: opacity 0s linear 0.2s, visibility 0s linear 0.2s;
   }
 }
 
@@ -473,14 +489,23 @@
     background: #fff !important;
   }
 
+  /* place-items would shrink-wrap the card to 0px once .scene is a block. */
   .scene {
     display: block;
     min-height: 0;
     padding: 0;
+    place-items: normal;
   }
 
   .card-scene {
     opacity: 1;
+  }
+
+  /* With background graphics off, browsers print these texture layers as
+     opaque white boxes on top of the text. */
+  .face::before,
+  .face::after {
+    content: none;
   }
 
   .card-actions {
